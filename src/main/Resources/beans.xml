@@ -2,10 +2,18 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="
-       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">    <bean id="a" class="com.stackroute.domain.Manager">
-    <constructor-arg></constructor-arg>
-</bean>
-<bean id="a" class="com.stackroute.domain.Surveyor">
-    <constructor-arg></constructor-arg>
-</bean>
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="a" class="com.stackroute.domain.Manager">
+        <constructor-arg name="manId" value="1" ></constructor-arg>
+        <constructor-arg name="manName" value="Anil" ></constructor-arg>
+        <constructor-arg index="2" ref="b"></constructor-arg>
+
+    </bean>
+    <bean id="b" class="com.stackroute.domain.Surveyor">
+        <property name="id"  value="1"></property>
+        <property name="name"  value="AnilKumar"></property>
+
+    </bean>
+
 </beans>
